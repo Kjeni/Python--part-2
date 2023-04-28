@@ -8,7 +8,7 @@ def dodawanie() -> tuple[float,str]:
     liczba2: float = float(input("Podaj drugą liczbę: "))
     wynik: float = liczba1 + liczba2
     informacja: str = f"{liczba1} + {liczba2} = {wynik}"
-    return wynik, informacja
+    return f"Dodaję: {informacja}" , f"Wynik: {wynik}"
 
 def odejmowanie() -> tuple[float, str]:
     """Funkcja wykonuje operację odejmowania dwóch liczb.
@@ -20,7 +20,7 @@ def odejmowanie() -> tuple[float, str]:
     liczba2: float = float(input("Podaj drugą liczbę: "))
     wynik: float = liczba1 - liczba2
     informacja: str = f"{liczba1} - {liczba2} = {wynik}"
-    return wynik, informacja
+    return f"Odejmuję: {informacja}" , f"Wynik: {wynik}"
 def mnożenie() -> tuple[float, str]:
     """Funkcja wykonuje operację mnożenia dwóch liczb.
 
@@ -31,7 +31,7 @@ def mnożenie() -> tuple[float, str]:
     liczba2: float = float(input("Podaj drugą liczbę: "))
     wynik: float = liczba1 * liczba2
     informacja: str = f"{liczba1} * {liczba2} = {wynik}"
-    return wynik, informacja
+    return f"Mnożę: {informacja}" , f"Wynik: {wynik}"
 def dzielenie():
     """Funkcja wykonuje operację dzielenia dwóch liczb.
 
@@ -42,7 +42,7 @@ def dzielenie():
     liczba2: float = float(input("Podaj drugą liczbę: "))
     wynik: float = liczba1 / liczba2
     informacja: str = f"{liczba1} : {liczba2} = {wynik}"
-    return wynik, informacja
+    return f"Dzielę: {informacja}" , f"Wynik: {wynik}"
 def menu():
     print("[1] Dodawanie")
     print("[2] Odejmowanie")
