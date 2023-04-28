@@ -1,23 +1,48 @@
-def dodawanie():
-    liczba1 = int(input("Podaj pierwszą liczbę: "))
-    liczba2 = int(input("Podaj drugą liczbę: "))
-    wynik = liczba1+liczba2
-    return wynik
-def odejmowanie():
-    liczba1 = int(input("Podaj pierwszą liczbę: "))
-    liczba2 = int(input("Podaj drugą liczbę: "))
-    wynik = liczba1-liczba2
-    return wynik
-def mnożenie():
-    liczba1 = int(input("Podaj pierwszą liczbę: "))
-    liczba2 = int(input("Podaj drugą liczbę: "))
-    wynik = liczba1*liczba2
-    return wynik
+def dodawanie() -> tuple[float,str]:
+    """Funkcja wykonuje operację dodawania dwóch liczb.
+
+    :return: Tuple zawierający wynik dodawania i informację o operacji.
+    :rtype: tuple[float, str]
+    """
+    liczba1: float = float(input("Podaj pierwszą liczbę: "))
+    liczba2: float = float(input("Podaj drugą liczbę: "))
+    wynik: float = liczba1 + liczba2
+    informacja: str = f"{liczba1} + {liczba2} = {wynik}"
+    return wynik, informacja
+
+def odejmowanie() -> tuple[float, str]:
+    """Funkcja wykonuje operację odejmowania dwóch liczb.
+
+    :return: Tuple zawierający wynik odejmowania i informację o operacji.
+    :rtype: tuple[float, str]
+    """
+    liczba1: float = float(input("Podaj pierwszą liczbę: "))
+    liczba2: float = float(input("Podaj drugą liczbę: "))
+    wynik: float = liczba1 - liczba2
+    informacja: str = f"{liczba1} - {liczba2} = {wynik}"
+    return wynik, informacja
+def mnożenie() -> tuple[float, str]:
+    """Funkcja wykonuje operację mnożenia dwóch liczb.
+
+    :return: Tuple zawierający wynik mnożenia i informację o operacji.
+    :rtype: tuple[float, str]
+    """
+    liczba1: float = float(input("Podaj pierwszą liczbę: "))
+    liczba2: float = float(input("Podaj drugą liczbę: "))
+    wynik: float = liczba1 * liczba2
+    informacja: str = f"{liczba1} * {liczba2} = {wynik}"
+    return wynik, informacja
 def dzielenie():
-    liczba1 = int(input("Podaj pierwszą liczbę: "))
-    liczba2 = int(input("Podaj drugą liczbę: "))
-    wynik = liczba1/liczba2
-    return wynik
+    """Funkcja wykonuje operację dzielenia dwóch liczb.
+
+    :return: Tuple zawierający wynik dzielenia i informację o operacji.
+    :rtype: tuple[float, str]
+    """
+    liczba1: float = float(input("Podaj pierwszą liczbę: "))
+    liczba2: float = float(input("Podaj drugą liczbę: "))
+    wynik: float = liczba1 / liczba2
+    informacja: str = f"{liczba1} : {liczba2} = {wynik}"
+    return wynik, informacja
 def menu():
     print("[1] Dodawanie")
     print("[2] Odejmowanie")
