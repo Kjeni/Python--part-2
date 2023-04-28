@@ -1,21 +1,21 @@
 def dodawanie():
-    liczba1 = int(input("Podaj pierwszą liczbę: "))
-    liczba2 = int(input("Podaj drugą liczbę: "))
+    liczba1 = float(input("Podaj pierwszą liczbę: "))
+    liczba2 = float(input("Podaj drugą liczbę: "))
     wynik = liczba1+liczba2
     return wynik
 def odejmowanie():
-    liczba1 = int(input("Podaj pierwszą liczbę: "))
-    liczba2 = int(input("Podaj drugą liczbę: "))
+    liczba1 = float(input("Podaj pierwszą liczbę: "))
+    liczba2 = float(input("Podaj drugą liczbę: "))
     wynik = liczba1-liczba2
     return wynik
 def mnożenie():
-    liczba1 = int(input("Podaj pierwszą liczbę: "))
-    liczba2 = int(input("Podaj drugą liczbę: "))
+    liczba1 = float(input("Podaj pierwszą liczbę: "))
+    liczba2 = float(input("Podaj drugą liczbę: "))
     wynik = liczba1*liczba2
     return wynik
 def dzielenie():
-    liczba1 = int(input("Podaj pierwszą liczbę: "))
-    liczba2 = int(input("Podaj drugą liczbę: "))
+    liczba1 = float(input("Podaj pierwszą liczbę: "))
+    liczba2 = float(input("Podaj drugą liczbę: "))
     wynik = liczba1/liczba2
     return wynik
 def menu():
