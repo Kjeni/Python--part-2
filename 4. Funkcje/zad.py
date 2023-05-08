@@ -2,22 +2,26 @@ def dodawanie():
     liczba1 = float(input("Podaj pierwszą liczbę: "))
     liczba2 = float(input("Podaj drugą liczbę: "))
     wynik = liczba1+liczba2
-    return wynik
+    informacja = f"{liczba1} + {liczba2} = {wynik}"
+    return f"Dodaję: {informacja} ", f"Wynik: {wynik}"
 def odejmowanie():
     liczba1 = float(input("Podaj pierwszą liczbę: "))
     liczba2 = float(input("Podaj drugą liczbę: "))
     wynik = liczba1-liczba2
-    return wynik
+    informacja = f"{liczba1} - {liczba2} = {wynik}"
+    return f"Odejmuję: {informacja} ", f"Wynik: {wynik}"
 def mnożenie():
     liczba1 = float(input("Podaj pierwszą liczbę: "))
     liczba2 = float(input("Podaj drugą liczbę: "))
     wynik = liczba1*liczba2
-    return wynik
+    informacja = f"{liczba1} * {liczba2} = {wynik}"
+    return f"Mnożę: {informacja} ", f"Wynik: {wynik}"
 def dzielenie():
     liczba1 = float(input("Podaj pierwszą liczbę: "))
     liczba2 = float(input("Podaj drugą liczbę: "))
     wynik = liczba1/liczba2
-    return wynik
+    informacja = f"{liczba1} : {liczba2} = {wynik}"
+    return f"Dzielę: {informacja} ", f"Wynik: {wynik}"
 def menu():
     print("[1] Dodawanie")
     print("[2] Odejmowanie")
