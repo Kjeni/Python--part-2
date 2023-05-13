@@ -11,10 +11,20 @@ czytelnik1 = Czytelnik(
     nazwisko= "Błażejewski",
     wiek=20
 )
-
+czytelnik2 = Czytelnik(
+    id=2,
+    imie = "Kamil",
+    nazwisko= "Kurczak",
+    wiek=22
+)
+print(f"Czytelnik {czytelnik1.id}: ")
 print(czytelnik1.id)
 print(czytelnik1.imie)
 print(czytelnik1.nazwisko)
 print(czytelnik1.wiek)
-
+print(f"Czytelnik {czytelnik2.id}: ")
+print(czytelnik2.id)
+print(czytelnik2.imie)
+print(czytelnik2.nazwisko)
+print(czytelnik2.wiek)
 # w 9 aby zablokowac uzyj __id
