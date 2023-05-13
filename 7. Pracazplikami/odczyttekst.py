@@ -1,30 +1,32 @@
 from os import path
 import string
 
-def words_count(text):
-    words= text.split()
-    word_count = len(words)
-
-    word_endings = {}
-    for word in words:
-        clean_word = word.strip(string.punctuation)
-        if clean_word:
-            last_letter = clean_word[-1].lower()
-            word_endings[last_letter] = word_endings.get(last_letter, 0) +1
-    return word_count, word_endings
+def policz_slowa(tekst):
+    tekst = tekst.translate(str.maketrans('', '', string.punctuation))
+    slowa = tekst.split()
+    liczba_slow = len(slowa)
+    
+#stats
+    statystyki = {}
+    for slowo in slowa:
+        litera_koncowa = slowo[-1]
+        if litera_koncowa in statystyki:
+            statystyki[litera_koncowa] += 1
+        else:
+            statystyki[litera_koncowa] = 1
+    
+    return liczba_slow, statystyki
 
 dir_path = path.dirname(__file__)
 filename = "tekst.txt"
 data_path = path.join(dir_path, filename)
 
-totalwords = 0
-with open(data_path, "r", encoding= "utf-8") as f:
-    file_lines = f.readlines()
-    
-for line in file_lines[:5]:
-    line_word_count, line_word_endings= words_count(line)
-    totalwords += words_count(line)
+with open(data_path, 'r') as file:
+    tekst = file.read()
 
+liczba_slow, statystyki = policz_slowa(tekst)
 
-
-print(f"Liczba słów w 3 liniach: {totalwords}")
+print("Liczba słów: ", liczba_slow)
+print("Statystyki, litery kończące słowa: ")
+for litera, liczba in statystyki.items():
+    print(f"{litera}: {liczba}")
