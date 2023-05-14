@@ -1,12 +1,14 @@
 class Czytelnik:
     def __init__(self,id,imie,nazwisko,wiek):
-        self.id = id
+        self.__id = id
         self.imie = imie
-        self.nazwisko = nazwisko
+        self.__nazwisko = nazwisko
         self.__wiek = wiek
 
 def pobierz_wiek(self) -> int:
     return self.__wiek
+def pobierz_imie(self) -> str:
+    return self.imie
 
 czytelnik1 = Czytelnik(
     id=1,
@@ -21,6 +23,6 @@ czytelnik2 = Czytelnik(
     wiek=22
 )
 
+print(pobierz_imie(czytelnik1))
 print(pobierz_wiek(czytelnik1))
-print(pobierz_wiek(czytelnik2))
 
