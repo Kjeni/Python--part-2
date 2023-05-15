@@ -34,32 +34,35 @@ def menu():
     print("[3] Mnożenie")
     print("[4] Dzielenie")
 
-menu()
-try:
-    option = int(input("Co chcesz zrobić[1-4], aby zakończyć działanie programu [0]: "))
+# try:
 
-    while option != 0:   
-        try:
-            if option ==1:
-                print(dodawanie())
-                option = int(input("Co chcesz zrobić[1-4]: "))
-            elif option==2:
-                print(odejmowanie())
-                option = int(input("Co chcesz zrobić[1-4]: "))
-            elif option == 3:
-                print(mnożenie())
-                option = int(input("Co chcesz zrobić[1-4]: "))
-            elif option==4:
-                print(dzielenie())
-                option = int(input("Co chcesz zrobić[1-4]: "))
-            elif option==0:
-                break
-        except ValueError:
-            print("Wprowadzono nieprawidłowe dane. Proszę wprowadzić liczby!")
-        except ZeroDivisionError:
-            print("Nie można dzielić przez zero!")
-    print("Koniec programu")
-except ValueError:
-    print("Następnym razem wybierz jedną z opcji: [1], [2], [3], [4], [0]. Program zakończył swoje działanie.")
+while True:
+    menu()
+    option = input("Co chcesz zrobić [1-4], aby zakończyć działanie programu [0]: ")
 
+    try:
+        option = int(option)  # Konwertujemy wprowadzoną wartość na liczbę całkowitą
+
+        if option not in [1, 2, 3, 4, 0]:
+            print("Wprowadź poprawną wartość [1], [2], [3], [4] lub [0]")
+            continue
+
+        if option == 0:
+            break
+
+        if option == 1:
+            print(dodawanie())
+        elif option == 2:
+            print(odejmowanie())
+        elif option == 3:
+            print(mnożenie())
+        elif option == 4:
+            print(dzielenie())
+
+    except ValueError:
+        print("Wprowadzono nieprawidłowe dane. Proszę wprowadzać liczby!")
+    except ZeroDivisionError:
+        print("Nie można dzielić przez zero!")
+
+print("Koniec programu")
 
