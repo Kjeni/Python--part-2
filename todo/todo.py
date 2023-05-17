@@ -12,6 +12,9 @@ class Task:
 class TaskManager:
     def __init__(self):
         self.tasks = []
+
+    def clear_tasks(self):
+        self.tasks.clear()
 #funkcja dodaj zadanie by id:
     def add_task(self, title, description, due_date):
         task_id = len(self.tasks) + 1
@@ -154,9 +157,16 @@ def main():
             task_manager.save_tasks_to_file(file_path)
             print("Zapisano zadania do pliku.")
         elif choice == "6":
-            filename = input("Podaj nazwę pliku do wczytania: ")
-            file_path = os.path.join(os.path.dirname(__file__), "zapisy", filename )
-            task_manager.load_tasks_from_file(file_path)
+            print("UWAGA! Ta operacja wymaga usunięcia dotychczasowych zadań!")
+            print("Wpisz: 'tak', aby potwierdzić lub pozostaw pole puste, aby wrócić do menu głównego")
+            potwierdzenie = input("Czy potwierdzasz operację usnięcia?: ")
+            if potwierdzenie == "tak":
+                task_manager.clear_tasks()
+                filename = input("Podaj nazwę pliku do wczytania: ")
+                file_path = os.path.join(os.path.dirname(__file__), "zapisy", filename )
+                task_manager.load_tasks_from_file(file_path)
+            else:
+                continue
         elif choice == "7":
             task_manager.get_all_tasks()
         elif choice == "8":
