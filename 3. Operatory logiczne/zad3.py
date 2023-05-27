@@ -6,4 +6,4 @@ if wiek >= 24:
 elif category_A2 >= 2 and wiek >= 20:
     print("Możesz przystąpić do egzaminu na prawo jazdy kategorii A.")
 else:
-    print("Nie spełniasz warunków do przystąpienia do egzaminu na prawo jazdy kategorii B.")
+    print("Nie spełniasz warunków do przystąpienia do egzaminu na prawo jazdy kategorii A.")

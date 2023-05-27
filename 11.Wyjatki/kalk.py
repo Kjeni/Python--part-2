@@ -12,7 +12,6 @@ def odejmowanie():
     wynik = liczba1-liczba2
     informacja = f"{liczba1} - {liczba2} = {wynik}"
     return f"Odejmuję: {informacja} ", f"Wynik: {wynik}"
-
         
 def mnożenie():
     liczba1 = float(input("Podaj pierwszą liczbę: "))
@@ -20,6 +19,7 @@ def mnożenie():
     wynik = liczba1*liczba2
     informacja = f"{liczba1} * {liczba2} = {wynik}"
     return f"Mnożę: {informacja} ", f"Wynik: {wynik}"
+
 def dzielenie():
     liczba1 = float(input("Podaj pierwszą liczbę: "))
     liczba2 = float(input("Podaj drugą liczbę: "))
@@ -34,7 +34,6 @@ def menu():
     print("[3] Mnożenie")
     print("[4] Dzielenie")
 
-# try:
 
 while True:
     menu()
@@ -46,10 +45,8 @@ while True:
         if option not in [1, 2, 3, 4, 0]:
             print("Wprowadź poprawną wartość [1], [2], [3], [4] lub [0]")
             continue
-
         if option == 0:
             break
-
         if option == 1:
             print(dodawanie())
         elif option == 2:
