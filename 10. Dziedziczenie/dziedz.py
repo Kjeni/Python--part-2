@@ -4,9 +4,10 @@ class Figura(ABC):
     def __init__(self, nazwa):
         self.nazwa = nazwa
 
+        @abstractmethod
         def oblicz_obwod(self):
             pass
-
+        @abstractmethod
         def oblicz_pole(self):
             pass
 

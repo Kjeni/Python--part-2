@@ -3,6 +3,8 @@ from datetime import datetime, timedelta
 import os
 
 class Task:
+    task_counter = 0
+
     def __init__(self, task_id, title, description, due_date):
         self.task_id = task_id
         self.title = title
@@ -15,10 +17,13 @@ class TaskManager:
 
     def clear_tasks(self):
         self.tasks.clear()
+
 #funkcja dodaj zadanie by id:
     def add_task(self, title, description, due_date):
-        task_id = len(self.tasks) + 1
-        task = Task(task_id, title, description, due_date)
+        # task_id = len(self.tasks) + 1
+        Task.task_counter += 1
+        task_id = Task.task_counter
+        task = Task(task_id , title, description, due_date)
         self.tasks.append(task)
         print("Dodano nowe zadanie o ID: ", task_id)
 #funkcja usuwajaca zadanie by id:
@@ -74,7 +79,8 @@ class TaskManager:
         try:
             with open(file_path, "r") as file:
                 tasks_data = json.load(file)
-                task_data = sorted(file, key=lambda x: x['task_id'])
+#dodanie zmiennej przechowującej max id z wczytanego pliku
+                max_task_id = 0
             for task_data in tasks_data:
                 task_id = task_data["task_id"]
                 title = task_data["title"]
@@ -82,7 +88,11 @@ class TaskManager:
                 due_date = datetime.strptime(task_data["due_date"], "%Y-%m-%d")
                 task = Task(task_id, title, description, due_date)
                 self.tasks.append(task)
+#aktualizacja wartosci task_counter na najwieksze dostepne id
+                if task_id > max_task_id:
+                    max_task_id = task_id
 
+            Task.task_counter = max_task_id
             print("Załadowano zapisane zadania.")
         except FileNotFoundError:
             print("Nie znaleziono pliku z zapisanymi zadaniami.")
